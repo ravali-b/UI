@@ -1,9 +1,29 @@
-/**
- * Created by ravali bolem on 02-06-2018.
- */
-var app = angular.module('myApp', []);
+// create the module and name it scotchApp
+var scotchApp = angular.module('scotchApp', ['ngRoute']);
 
-app.controller('addCtrl', function($scope) {
+// configure our routes
+scotchApp.config(function($routeProvider) {
+    $routeProvider
+
+    // route for the home page
+        .when('/', {
+            templateUrl : 'pages/home.html',
+            controller  : 'mainController'
+        })
+
+        // route for the about page
+        .when('/services', {
+            templateUrl : 'pages/services.html',
+            controller  : 'servicesController'
+        })
+});
+
+// create the controller and inject Angular's $scope
+scotchApp.controller('mainController', function($scope) {
+    // create a message to display in our view
+});
+
+scotchApp.controller('servicesController', function($scope) {
     $scope.booksList = [];
     $scope.editIndex = false;
     $scope.addBook = function() {
@@ -15,10 +35,6 @@ app.controller('addCtrl', function($scope) {
                 year: $scope.year,
                 done: false
             });
-            localStorage.setItem('bookName',JSON.stringify($scope.bookName));
-            localStorage.setItem('isbn',JSON.stringify($scope.isbn));
-            localStorage.setItem('author',JSON.stringify($scope.author));
-            localStorage.setItem('year',JSON.stringify($scope.year));
         }
         else {
             $scope.booksList[$scope.editIndex].bookName = $scope.bookName;
@@ -52,11 +68,5 @@ app.controller('addCtrl', function($scope) {
         $scope.current = {};
     }
 });
-
-
-
-
-
-
 
 
