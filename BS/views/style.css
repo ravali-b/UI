@@ -1,0 +1,27 @@
+body{
+    background-image: url("test.jpg");
+}
+table{
+    text-align: center;
+    width: 50%;
+    border: 1px solid #dddddd;
+    margin-left: 300px;
+    margin-top: 50px;
+    background-color: azure;
+}
+th{
+    font-size: x-large;
+    text-decoration: underline;
+}
+th, td{
+    border-bottom: 1px solid #dddddd;
+    color: darkmagenta;
+}
+h1{
+    text-align: center;
+    color: darkmagenta;
+    font-family: "Book Antiqua"
+}
+button{
+    position: center;
+}

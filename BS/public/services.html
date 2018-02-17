@@ -1,0 +1,39 @@
+<div class="container text-center" ng-controller="servicesController">
+    <div class="container">
+        <div class="container text-center">
+            <div class="box">
+                <h2>Book Shelf</h2>
+                <h4>Online books</h4>
+                <form action="/new" method="post">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+                        <input type="text" name="bName" class="form-control" placeholder="Book Name" ng-model="bName">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                        <input type="text" name="bIsbn" class="form-control" placeholder="ISBN" ng-model="bIsbn">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" name="bAuthor" class="form-control" placeholder="Author Name" ng-model="bAuthor">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input type="date" name="bYear" class="form-control" placeholder="Published year" ng-model="bYear">
+                    </div>
+                    <br/>
+                    <button type="submit" class="btn btn-success btn-md" ng-click="addBook()">
+                        <span class="glyphicon glyphicon-plus"></span> Add
+                    </button>
+                </form>
+                <br>
+                <form action="/book" method="get">
+                    <button type="submit" class="btn btn-primary btn-md">
+                        <span class="glyphicon glyphicon-book"></span> Books
+                    </button>
+                </form>
+            </div>
+        </div>
+        <br/><br/>
+    </div>
+</div>
